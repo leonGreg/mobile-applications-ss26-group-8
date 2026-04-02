@@ -41,7 +41,7 @@ class LoginPage extends StatelessWidget {
             Row(
               children: [
                 Checkbox(value: false, onChanged: (value) {}),
-                Text("Remember me"),
+                Text('Remember me'),
               ],
             ),
 
@@ -50,7 +50,7 @@ class LoginPage extends StatelessWidget {
             // Button
             SizedBox(
               width: double.infinity,
-              child: ElevatedButton(onPressed: () {}, child: Text("Login")),
+              child: ElevatedButton(onPressed: () {}, child: Text('Login')),
             ),
           ],
         ),
