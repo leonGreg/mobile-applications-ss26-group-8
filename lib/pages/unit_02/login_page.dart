@@ -6,13 +6,14 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(title: Text('Login'), centerTitle: true),
       body: Padding(
         padding: EdgeInsets.all(20),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             // Logo
-            Image.asset('assets/images/logo.png', height: 200),
+            Image.asset('assets/images/logo.png', height: 150),
 
             SizedBox(height: 30),
 
