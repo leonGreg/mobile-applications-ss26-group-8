@@ -40,28 +40,22 @@ class _TeamProfileState extends State<TeamProfile> {
 
   @override
   Widget build(BuildContext context) {
-    final member = teamMembers[currentIndex];
-
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Team Profile App'),
-        centerTitle: true,
-      ),
+      appBar: AppBar(title: const Text('Profile - Team 8'), centerTitle: true),
       body: Padding(
-        padding: const EdgeInsets.all(16),
+        padding: const EdgeInsets.all(15),
         child: Column(
           children: [
             TeamInfoSection(
-              teamName: teamName,
               teamDescription: teamDescription,
               memberCount: teamMembers.length,
             ),
-            const SizedBox(height: 16),
+            const SizedBox(height: 15),
             Text(
               'Team Member ${currentIndex + 1} of ${teamMembers.length}',
               style: Theme.of(context).textTheme.titleMedium,
             ),
-            const SizedBox(height: 12),
+            const SizedBox(height: 10),
             Expanded(
               child: PageView.builder(
                 controller: _pageController,
@@ -76,7 +70,7 @@ class _TeamProfileState extends State<TeamProfile> {
                 },
               ),
             ),
-            const SizedBox(height: 12),
+            const SizedBox(height: 10),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -94,7 +88,7 @@ class _TeamProfileState extends State<TeamProfile> {
                 ),
               ],
             ),
-            const SizedBox(height: 12),
+            const SizedBox(height: 10),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: List.generate(
@@ -114,18 +108,14 @@ class _TeamProfileState extends State<TeamProfile> {
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
                       color: currentIndex == index
-                          ? Colors.blue
+                          ? Colors.deepPurpleAccent
                           : Colors.grey.shade400,
                     ),
                   ),
                 ),
               ),
             ),
-            const SizedBox(height: 8),
-            Text(
-              'Current member: ${member.name}',
-              style: const TextStyle(fontWeight: FontWeight.w500),
-            ),
+            const SizedBox(height: 10),
           ],
         ),
       ),
