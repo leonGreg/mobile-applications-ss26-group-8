@@ -1,8 +1,7 @@
 import '../models/team_member.dart';
 
-const String teamName = 'Team_8';
 const String teamDescription =
-    'We are a motivated international student team working on creative mobile app solutions with Flutter.';
+    'We are a international student team working on creative mobile solutions with Flutter.';
 
 final List<TeamMember> teamMembers = [
   TeamMember(
@@ -11,15 +10,15 @@ final List<TeamMember> teamMembers = [
     role: 'Fullstack Developer',
     hobbies: 'Coding, football, design',
     motto: 'Keep building and keep learning.',
-    imagePath: 'assets/images/',
+    imagePath: 'assets/images/avatar1.png',
   ),
   TeamMember(
-    name: '',
-    country: '',
-    role: '',
-    hobbies: '',
-    motto: '',
-    imagePath: '',
+    name: 'Leon',
+    country: 'Germany',
+    role: 'Fullstack Developer',
+    hobbies: 'Coding, guitar, music, traveling',
+    motto: 'Always be learning and improving.',
+    imagePath: 'assets/images/avatar2.png',
   ),
   TeamMember(
     name: '',
