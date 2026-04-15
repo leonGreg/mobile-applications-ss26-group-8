@@ -42,81 +42,90 @@ class _TeamProfileState extends State<TeamProfile> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('Profile - Team 8'), centerTitle: true),
-      body: Padding(
-        padding: const EdgeInsets.all(15),
-        child: Column(
-          children: [
-            TeamInfoSection(
-              teamDescription: teamDescription,
-              memberCount: teamMembers.length,
-            ),
-            const SizedBox(height: 15),
-            Text(
-              'Team Member ${currentIndex + 1} of ${teamMembers.length}',
-              style: Theme.of(context).textTheme.titleMedium,
-            ),
-            const SizedBox(height: 10),
-            Expanded(
-              child: PageView.builder(
-                controller: _pageController,
-                itemCount: teamMembers.length,
-                onPageChanged: (index) {
-                  setState(() {
-                    currentIndex = index;
-                  });
-                },
-                itemBuilder: (context, index) {
-                  return MemberCard(member: teamMembers[index]);
-                },
+      body: Container(
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            colors: [Color(0xFF0F0122), Color(0xFF101D57), Color(0xFFB48CBA)],
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+          ),
+        ),
+        child: Padding(
+          padding: const EdgeInsets.all(15),
+          child: Column(
+            children: [
+              TeamInfoSection(
+                teamDescription: teamDescription,
+                memberCount: teamMembers.length,
               ),
-            ),
-            const SizedBox(height: 10),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                ElevatedButton.icon(
-                  onPressed: currentIndex == 0 ? null : goToPrevious,
-                  icon: const Icon(Icons.arrow_back),
-                  label: const Text('Previous'),
-                ),
-                ElevatedButton.icon(
-                  onPressed: currentIndex == teamMembers.length - 1
-                      ? null
-                      : goToNext,
-                  icon: const Icon(Icons.arrow_forward),
-                  label: const Text('Next'),
-                ),
-              ],
-            ),
-            const SizedBox(height: 10),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: List.generate(
-                teamMembers.length,
-                (index) => GestureDetector(
-                  onTap: () {
-                    _pageController.animateToPage(
-                      index,
-                      duration: const Duration(milliseconds: 300),
-                      curve: Curves.easeInOut,
+              Text(
+                'Team Member ${currentIndex + 1} of ${teamMembers.length}',
+                style: Theme.of(context).textTheme.titleMedium?.copyWith(color: Colors.white),
+              ),
+              Expanded(
+                child: PageView.builder(
+                  controller: _pageController,
+                  itemCount: teamMembers.length,
+                  onPageChanged: (index) {
+                    setState(() => currentIndex = index);
+                  },
+                  itemBuilder: (context, index) {
+                    return SingleChildScrollView(
+                      physics: const BouncingScrollPhysics(),
+                      child: MemberCard(member: teamMembers[index]),
                     );
                   },
-                  child: Container(
-                    margin: const EdgeInsets.symmetric(horizontal: 4),
-                    width: currentIndex == index ? 12 : 10,
-                    height: currentIndex == index ? 12 : 10,
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: currentIndex == index
-                          ? Colors.deepPurpleAccent
-                          : Colors.grey.shade400,
+                ),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  ElevatedButton.icon(
+                    onPressed: currentIndex == 0 ? null : goToPrevious,
+                    icon: const Icon(Icons.arrow_back),
+                    label: const Text('Previous'),
+                    style: ElevatedButton.styleFrom(
+                      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+                    ),
+                  ),
+                  ElevatedButton.icon(
+                    onPressed: currentIndex == teamMembers.length - 1 ? null : goToNext,
+                    icon: const Icon(Icons.arrow_forward),
+                    label: const Text('Next'),
+                    style: ElevatedButton.styleFrom(
+                      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+                    ),
+                  ),
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: List.generate(
+                  teamMembers.length,
+                      (index) => GestureDetector(
+                    onTap: () {
+                      _pageController.animateToPage(
+                        index,
+                        duration: const Duration(milliseconds: 300),
+                        curve: Curves.easeInOut,
+                      );
+                    },
+                    child: Container(
+                      margin: const EdgeInsets.symmetric(horizontal: 4),
+                      width: currentIndex == index ? 12 : 10,
+                      height: currentIndex == index ? 12 : 10,
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: currentIndex == index
+                            ? Colors.white
+                            : Colors.white70,
+                      ),
                     ),
                   ),
                 ),
               ),
-            ),
-            const SizedBox(height: 10),
-          ],
+            ],
+          ),
         ),
       ),
     );
