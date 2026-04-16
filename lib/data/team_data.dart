@@ -37,12 +37,12 @@ final List<TeamMember> teamMembers = [
     imagePath: 'assets/images/avatar6.png',
   ),
   TeamMember(
-    name: '',
-    country: '',
-    role: '',
-    hobbies: '',
-    motto: '',
-    imagePath: '',
+    name: 'Phat',
+    country: 'Vietnam',
+    role: 'Fullstack Developer',
+    hobbies: 'Football, movies, traveling',
+    motto: 'Stay curious and keep developing.',
+    imagePath: 'assets/images/avatar3.png',
   ),
   TeamMember(
     name: '',
