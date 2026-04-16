@@ -29,19 +29,19 @@ final List<TeamMember> teamMembers = [
     imagePath: 'assets/images/avatar4.png',
   ),
   TeamMember(
-    name: '',
-    country: '',
-    role: '',
-    hobbies: '',
-    motto: '',
-    imagePath: '',
-  ),
-  TeamMember(
     name: 'Ismail',
     country: 'Turkey',
     role: 'Fullstack Developer',
     hobbies: 'Football',
     motto: 'I live once',
+    imagePath: 'assets/images/avatar6.png',
+  ),
+  TeamMember(
+    name: '',
+    country: '',
+    role: '',
+    hobbies: '',
+    motto: '',
     imagePath: '',
   ),
   TeamMember(

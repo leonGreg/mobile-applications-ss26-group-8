@@ -58,10 +58,15 @@ class _TeamProfileState extends State<TeamProfile> {
                 teamDescription: teamDescription,
                 memberCount: teamMembers.length,
               ),
+              SizedBox(height: 15),
+
               Text(
                 'Team Member ${currentIndex + 1} of ${teamMembers.length}',
-                style: Theme.of(context).textTheme.titleMedium?.copyWith(color: Colors.white),
+                style: Theme.of(
+                  context,
+                ).textTheme.titleMedium?.copyWith(color: Colors.white),
               ),
+
               Expanded(
                 child: PageView.builder(
                   controller: _pageController,
@@ -85,15 +90,23 @@ class _TeamProfileState extends State<TeamProfile> {
                     icon: const Icon(Icons.arrow_back),
                     label: const Text('Previous'),
                     style: ElevatedButton.styleFrom(
-                      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 16,
+                        vertical: 10,
+                      ),
                     ),
                   ),
                   ElevatedButton.icon(
-                    onPressed: currentIndex == teamMembers.length - 1 ? null : goToNext,
+                    onPressed: currentIndex == teamMembers.length - 1
+                        ? null
+                        : goToNext,
                     icon: const Icon(Icons.arrow_forward),
                     label: const Text('Next'),
                     style: ElevatedButton.styleFrom(
-                      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 16,
+                        vertical: 10,
+                      ),
                     ),
                   ),
                 ],
@@ -102,7 +115,7 @@ class _TeamProfileState extends State<TeamProfile> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: List.generate(
                   teamMembers.length,
-                      (index) => GestureDetector(
+                  (index) => GestureDetector(
                     onTap: () {
                       _pageController.animateToPage(
                         index,
