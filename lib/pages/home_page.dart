@@ -13,6 +13,11 @@ class HomePage extends StatelessWidget {
       subtitle: 'Team Profile Page',
       routeName: '/unit-03',
     ),
+    _UnitInfo(
+      title: 'Homework 3',
+      subtitle: 'Restaurant Page',
+      routeName: '/unit-04',
+    ),
   ];
   @override
   Widget build(BuildContext context) {
