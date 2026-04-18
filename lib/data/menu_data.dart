@@ -1,4 +1,4 @@
-import '../models/menu.dart';
+import '../models/menu_category.dart';
 import '../models/dish.dart';
 
 final List<MenuCategory> menuCategories = [
@@ -21,7 +21,7 @@ final List<MenuCategory> menuCategories = [
         longDescription: 'Fresh romaine lettuce mixed with crunchy croutons, parmesan cheese, and creamy Caesar dressing.',
         category: 'Starters',
         price: 6.99,
-        imageUrl: 'assets/images/caesar_salad.jpg',
+        imageUrl: 'assets/images/caesar_salad.png',
       ),
       Dish(
         id: 's3',
@@ -77,7 +77,7 @@ final List<MenuCategory> menuCategories = [
         longDescription: 'A traditional Italian dessert made with layers of ladyfingers soaked in coffee and layered with a creamy mascarpone mixture.',
         category: 'Desserts',
         price: 6.99,
-        imageUrl: 'assets/images/tiramisu.jpg',
+        imageUrl: 'assets/images/tiramisu.png',
       ),
       Dish(
         id: 'd2',
@@ -86,7 +86,7 @@ final List<MenuCategory> menuCategories = [
         longDescription: 'A smooth and creamy Italian dessert made with milk, cream, and gelatin, topped with a fresh berry sauce.',
         category: 'Desserts',
         price: 5.99,
-        imageUrl: 'assets/images/panna_cotta.jpg',
+        imageUrl: 'assets/images/panna_cotta.png',
       ),
     ],
   ),

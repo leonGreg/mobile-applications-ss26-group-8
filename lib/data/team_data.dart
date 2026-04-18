@@ -1,7 +1,7 @@
 import '../models/team_member.dart';
 
 const String teamDescription =
-    'We are a international student team working on creative mobile solutions with Flutter.';
+    'We are an international student team working on creative mobile solutions with Flutter.';
 
 final List<TeamMember> teamMembers = [
   TeamMember(
