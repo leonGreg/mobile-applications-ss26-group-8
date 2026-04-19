@@ -47,7 +47,7 @@ class DishDetailsPage extends StatelessWidget {
                         ),
                       ),
                       Text(
-                        '\$${dish.price.toStringAsFixed(2)}',
+                        '€${dish.price.toStringAsFixed(2)}',
                         style: const TextStyle(
                           fontSize: 24,
                           fontWeight: FontWeight.bold,

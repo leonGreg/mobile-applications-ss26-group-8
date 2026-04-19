@@ -20,7 +20,7 @@ class DishListItem extends StatelessWidget {
       ),
       subtitle: Text(dish.shortDescription),
       trailing: Text(
-        '\$${dish.price.toStringAsFixed(2)}',
+        '€${dish.price.toStringAsFixed(2)}',
         style: const TextStyle(
           fontWeight: FontWeight.bold,
           fontSize: 16,
