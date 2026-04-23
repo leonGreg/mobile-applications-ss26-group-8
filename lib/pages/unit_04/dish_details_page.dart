@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../models/dish.dart';
+import '../../widgets/gradient_app_bar.dart';
+import '../../theme/app_gradients.dart';
 
 class DishDetailsPage extends StatelessWidget {
   final Dish dish;
@@ -9,20 +11,9 @@ class DishDetailsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
+      appBar: GradientAppBar(
         title: Text(dish.name),
-        flexibleSpace: Container(
-          decoration: const BoxDecoration(
-            gradient: LinearGradient(
-              colors: [
-                Color(0xFF080213),
-                Color(0xFFEDE7F6),
-              ],
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-            ),
-          ),
-        ),
+        gradient: AppGradients.appBar,
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -38,7 +29,11 @@ class DishDetailsPage extends StatelessWidget {
                   height: 250,
                   width: double.infinity,
                   color: Colors.grey.shade300,
-                  child: const Icon(Icons.broken_image, size: 50, color: Colors.grey),
+                  child: const Icon(
+                    Icons.broken_image,
+                    size: 50,
+                    color: Colors.grey,
+                  ),
                 );
               },
             ),
@@ -53,9 +48,8 @@ class DishDetailsPage extends StatelessWidget {
                       Expanded(
                         child: Text(
                           dish.name,
-                          style: Theme.of(context).textTheme.headlineMedium?.copyWith(
-                                fontWeight: FontWeight.bold,
-                              ),
+                          style: Theme.of(context).textTheme.headlineMedium
+                              ?.copyWith(fontWeight: FontWeight.bold),
                         ),
                       ),
                       Text(

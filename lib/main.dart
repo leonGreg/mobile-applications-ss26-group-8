@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mobile_applications_group_8/pages/home_page.dart';
 import 'package:mobile_applications_group_8/pages/unit_02/login_page.dart';
 import 'package:mobile_applications_group_8/pages/unit_03/team_profile.dart';
-import 'package:mobile_applications_group_8/pages/unit_04/resaurant_page.dart';
+import 'package:mobile_applications_group_8/pages/unit_04/restaurant_page.dart';
 
 void main() {
   runApp(const MyApp());

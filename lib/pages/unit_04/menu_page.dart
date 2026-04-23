@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import '../../data/menu_data.dart';
 import '../../widgets/dish_list_item.dart';
+import '../../widgets/gradient_app_bar.dart';
+import '../../theme/app_gradients.dart';
 
 class MenuPage extends StatelessWidget {
   const MenuPage({super.key});
@@ -8,20 +10,9 @@ class MenuPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Our Menu'),
-        flexibleSpace: Container(
-          decoration: const BoxDecoration(
-            gradient: LinearGradient(
-              colors: [
-                Color(0xFF080213),
-                Color(0xFFEDE7F6),
-              ],
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-            ),
-          ),
-        ),
+      appBar: const GradientAppBar(
+        title: Text('Our Menu'),
+        gradient: AppGradients.appBar,
       ),
       body: ListView.builder(
         itemCount: menuCategories.length,
@@ -37,9 +28,9 @@ class MenuPage extends StatelessWidget {
                 child: Text(
                   category.name,
                   style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                        fontWeight: FontWeight.bold,
-                        color: Color(0xFF3F118A),
-                      ),
+                    fontWeight: FontWeight.bold,
+                    color: Color(0xFF3F118A),
+                  ),
                 ),
               ),
               ...category.dishes.map((dish) {

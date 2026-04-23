@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'menu_page.dart';
+import '../../widgets/gradient_app_bar.dart';
+import '../../theme/app_gradients.dart';
 
 class RestaurantPage extends StatelessWidget {
   const RestaurantPage({super.key});
@@ -7,21 +9,9 @@ class RestaurantPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Flutter Restaurant'),
-        flexibleSpace: Container(
-          decoration: const BoxDecoration(
-            gradient: LinearGradient(
-              colors: [
-                Color(0xFF0F041E),
-                Color(0xFF412B5E),
-                Color(0xFF928D9A),
-              ],
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-            ),
-          ),
-        ),
+      appBar: const GradientAppBar(
+        title: Text('Flutter Restaurant'),
+        gradient: AppGradients.appBar,
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -40,8 +30,11 @@ class RestaurantPage extends StatelessWidget {
                   end: Alignment.bottomRight,
                 ),
               ),
-              child: const Icon(Icons.restaurant, size: 80, color: Color(
-                  0xFFE8E5EC)),
+              child: const Icon(
+                Icons.restaurant,
+                size: 80,
+                color: Color(0xFFE8E5EC),
+              ),
             ),
             Padding(
               padding: const EdgeInsets.all(16.0),
@@ -51,9 +44,9 @@ class RestaurantPage extends StatelessWidget {
                   Text(
                     'Welcome to Flutter Restaurant!',
                     style: Theme.of(context).textTheme.headlineMedium?.copyWith(
-                          fontWeight: FontWeight.bold,
-                          color: Color(0xFF0F0122),
-                        ),
+                      fontWeight: FontWeight.bold,
+                      color: Color(0xFF0F0122),
+                    ),
                   ),
                   const SizedBox(height: 16),
                   const Text(
@@ -61,24 +54,38 @@ class RestaurantPage extends StatelessWidget {
                     style: TextStyle(fontSize: 16),
                   ),
                   const SizedBox(height: 24),
-                  _buildInfoRow(Icons.access_time, 'Opening Hours: 10:00 AM - 10:00 PM'),
+                  _buildInfoRow(
+                    Icons.access_time,
+                    'Opening Hours: 10:00 AM - 10:00 PM',
+                  ),
                   const SizedBox(height: 8),
-                  _buildInfoRow(Icons.location_on, '123 Flutter Street, Dart City'),
+                  _buildInfoRow(
+                    Icons.location_on,
+                    '123 Flutter Street, Dart City',
+                  ),
                   const SizedBox(height: 32),
                   Center(
                     child: ElevatedButton(
                       onPressed: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => const MenuPage()),
+                          MaterialPageRoute(
+                            builder: (context) => const MenuPage(),
+                          ),
                         );
                       },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Color(0xFF0F041E),
                         foregroundColor: Colors.white,
-                        padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 15),
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 40,
+                          vertical: 15,
+                        ),
                       ),
-                      child: const Text('View Menu', style: TextStyle(fontSize: 18)),
+                      child: const Text(
+                        'View Menu',
+                        style: TextStyle(fontSize: 18),
+                      ),
                     ),
                   ),
                 ],
@@ -95,7 +102,10 @@ class RestaurantPage extends StatelessWidget {
       children: [
         Icon(icon, color: Color(0xFF3F118A)),
         const SizedBox(width: 8),
-        Text(text, style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w500)),
+        Text(
+          text,
+          style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
+        ),
       ],
     );
   }
