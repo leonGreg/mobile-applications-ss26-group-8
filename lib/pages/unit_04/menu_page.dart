@@ -10,6 +10,18 @@ class MenuPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Our Menu'),
+        flexibleSpace: Container(
+          decoration: const BoxDecoration(
+            gradient: LinearGradient(
+              colors: [
+                Color(0xFF080213),
+                Color(0xFFEDE7F6),
+              ],
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+            ),
+          ),
+        ),
       ),
       body: ListView.builder(
         itemCount: menuCategories.length,
@@ -26,7 +38,7 @@ class MenuPage extends StatelessWidget {
                   category.name,
                   style: Theme.of(context).textTheme.titleLarge?.copyWith(
                         fontWeight: FontWeight.bold,
-                        color: Colors.deepPurple,
+                        color: Color(0xFF3F118A),
                       ),
                 ),
               ),

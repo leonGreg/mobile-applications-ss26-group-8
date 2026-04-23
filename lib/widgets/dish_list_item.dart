@@ -11,7 +11,7 @@ class DishListItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListTile(
       leading: const CircleAvatar(
-        backgroundColor: Colors.deepPurpleAccent,
+        backgroundColor: Color(0xFF523888),
         child: Icon(Icons.fastfood, color: Colors.white),
       ),
       title: Text(

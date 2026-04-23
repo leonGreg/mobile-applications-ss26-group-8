@@ -11,6 +11,18 @@ class DishDetailsPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(dish.name),
+        flexibleSpace: Container(
+          decoration: const BoxDecoration(
+            gradient: LinearGradient(
+              colors: [
+                Color(0xFF080213),
+                Color(0xFFEDE7F6),
+              ],
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+            ),
+          ),
+        ),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -87,6 +99,8 @@ class DishDetailsPage extends StatelessWidget {
               );
             },
             style: ElevatedButton.styleFrom(
+              backgroundColor: Color(0xFF0F041E),
+              foregroundColor: Colors.white,
               padding: const EdgeInsets.symmetric(vertical: 16),
             ),
             child: const Text('Add to Order', style: TextStyle(fontSize: 18)),
